@@ -1,0 +1,18 @@
+{
+  "name": "florida-updates",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.14",
+    "next": "15.2.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

@@ -1,0 +1,2763 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/base.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Fonts ─────────────────────────────────────────────────────────────────── */
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'Epilogue';
+    src: url('/fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+    --color-green: #29725f;
+    --color-lightblue: #82a0ff;
+    --color-darkblue: #4b69f0;
+    --color-lightgreen: #e6fab9;
+    --color-orange: #f5693c;
+    --color-maroon: #a0325a;
+    --color-pink: #ff9ae8;
+    --bg-color: #f8dff3;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark: #1a1a1a;
+    --color-black-soft: #111111;
+    --color-black-deep: #0a0a0a;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+/* Prevent selection on non-text elements */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+         user-select: none;
+}
+
+/* ─── Base Elements ──────────────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-color);
+    font-family: 'Epilogue', sans-serif;
+    color: var(--color-dark);
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: url("/assets/Cursor SVG/cursor-default.svg") 2 0, auto;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nextjs-portal,
+[data-nextjs-toast],
+[data-next-mark],
+#__next-build-watcher {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/navbar.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Navbar & Header ───────────────────────────────────────────────────────── */
+.main-header {
+    width: 100%;
+}
+
+.logo-work-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-width: 60px;
+    height: 55px;
+    overflow: visible;
+}
+
+.nav-bar__work-blob-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.logo-work-text {
+    position: relative;
+    z-index: 2;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    margin-left: 52px;
+    white-space: nowrap;
+    color: inherit;
+    letter-spacing: -0.5px;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+    z-index: 1000;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.on-dark {
+    color: var(--bg-color);
+}
+
+.navbar.on-light {
+    color: var(--color-dark);
+}
+
+.logo-truus {
+    display: block;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.logo-truus__img {
+    display: block;
+    height: 110px;
+    width: auto;
+}
+
+.logo-truus__img--mark {
+    display: none;
+    height: 86px;
+}
+
+.navbar.on-light .logo-truus__img--full {
+    display: none;
+}
+
+.navbar.on-light .logo-truus__img--mark {
+    display: block;
+}
+
+.logo-truus path,
+.nav-bar__discord-svg path {
+    fill: currentColor;
+    transition: fill 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-bar__discord-svg {
+    width: 30px;
+    height: auto;
+    display: block;
+    color: inherit;
+}
+
+
+/* VimeoHero sits directly inside main-header — no extra wrapper needed */
+.main-header {
+    width: 100%;
+    position: relative;
+}
+
+/* ─── Full-screen dark overlay when navbar popout is open ─── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 99;
+    /* Just below the popout (z-index: 100) */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-hover-trigger {
+    position: relative;
+}
+
+.nav-popout {
+    position: absolute;
+    background: var(--bg-color);
+    /* Off-white beige from image */
+    color: var(--color-dark);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.nav-popout-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-hover-trigger:hover .nav-popout {
+    pointer-events: auto;
+}
+
+/* Base text styling */
+.nav-popout h4,
+.nav-popout p,
+.nav-popout a {
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+}
+
+/* --- Left Popout (Work) --- */
+.nav-left .nav-popout {
+    top: 8px;
+    left: -8px;
+    width: 320px;
+    height: 500px;
+}
+
+.nav-left .nav-popout-inner {
+    width: 100%;
+    height: 100%;
+    padding: 100px 24px 24px 24px;
+    /* Space for the Work logo at the top */
+    gap: 20px;
+}
+
+.nav-left .logo-work-container {
+    position: relative;
+    z-index: 105;
+    /* Keeps logo ABOVE the popout background */
+}
+
+/* Force text dark when hovering, since popout bg is light */
+.nav-left:hover .logo-work-text {
+    color: var(--color-dark) !important;
+}
+
+/* The work items layout */
+.nav-work-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+/* Image clip wrapper — tilt stays inside bounds */
+.nav-work-item__img-wrap {
+    width: 75px;
+    height: 75px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.nav-work-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-work-item__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.nav-work-badge {
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border-bottom-left-radius: 1px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.badge-maroon {
+    background-color: #B1536E;
+    /* Deep maroon/pink */
+    color: var(--color-dark);
+}
+
+.badge-pink {
+    background-color: #EBB6F4;
+    /* Light pink */
+    color: var(--color-dark);
+}
+
+.nav-work-title {
+    margin-top: 50px;
+    font-size: 1.3rem;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.nav-work-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+    margin-top: 10rem;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+/* --- Right Popout (WhatsApp) --- */
+.nav-right .nav-popout {
+    top: 8px;
+    right: -8px;
+}
+
+.nav-right .nav-popout-inner {
+    width: 280px;
+    padding: 92px 24px 24px 24px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.nav-right .logo-discord {
+    position: relative;
+    z-index: 105;
+}
+
+.nav-wa-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    margin-top: 0;
+}
+
+.nav-wa-desc {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.35;
+    opacity: 1;
+    margin-bottom: 28px;
+    /* Large gap to the link */
+}
+
+.nav-wa-link {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    padding-bottom: 18px;
+    /* Room for the two SVG lines below */
+}
+
+.nav-wa-link-text {
+    z-index: 2;
+}
+
+.nav-wa-link-svg {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    /* Taller to fit both paths */
+}
+
+.nav-wa-link-svg path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 0.5s ease-out;
+}
+
+.nav-hover-trigger:hover .nav-wa-link-svg path {
+    stroke-dashoffset: 0;
+    transition-delay: 0.15s;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/hero.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Hero / Content Section ─────────────────────────────────────────────── */
+.content-section {
+    padding: 200px 20px 0px;
+    text-align: center;
+}
+
+.title-container {
+    margin-bottom: 80px;
+    position: relative;
+    display: inline-block;
+}
+
+.main-title {
+    font-size: 6rem;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+    color: var(--color-black);
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.italic-text {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: -5px;
+}
+
+.title-underline-svg {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    width: 160px;
+    height: auto;
+    color: var(--color-black);
+}
+
+.title-underline-svg path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/motion-cards.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+/* ─── MotionCard Section ─────────────────────────────────────────────────── */
+.motion-card-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 60px 100px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ─── Part 1: Heading ────────────────────────────────────────────────────── */
+.motion-card__heading {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.motion-card__title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 7rem;
+    font-weight: 750;
+    line-height: 0.9;
+    letter-spacing: -5px;
+    color: var(--color-dark);
+    margin-bottom: 0;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.motion-card__subtitle {
+    font-family: 'Times New Roman', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 7.5rem;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    color: var(--color-dark);
+    position: relative;
+    display: inline-block;
+    top: -30px;
+}
+
+/* SVG sticker placeholder (top-right of subtitle) */
+.motion-card__sticker {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.motion-card__sticker--top {
+    top: -15px;
+    right: -25px;
+    width: 150px;
+    height: 80px;
+    rotate: calc(-10deg);
+    /* placeholder outline – remove once real SVG is inserted */
+}
+
+/* SVG underline under "from TV to TikTok." */
+.motion-card__underline-svg {
+    display: block;
+    max-width: 720px;
+    margin: -45px auto 0;
+    color: var(--color-dark);
+    height: auto;
+
+}
+
+/* ─── Part 2: Cards Area ─────────────────────────────────────────────────── */
+.motion-card__cards-area {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 550px;
+    margin: 40px auto 80px;
+}
+
+/* Blue blob behind cards */
+.motion-card__blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-116.5%, -45%);
+    width: 580px;
+    height: 500px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.motion-card__blob-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Individual Cards ───────────────────────────────────────────────────── */
+.motion-card__cards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.motion-card__card {
+    position: relative;
+    width: 17vw;
+    height: 22vw;
+    border-radius: 0.375rem;
+    overflow: clip;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.motion-card__card-image {
+    width: 100%;
+    height: 100%;
+    background-color: #d9d2cb;
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.motion-card__card-image .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card 1 — far left, tilted */
+.motion-card__card--1 {
+    transform: rotate(-6deg);
+    margin-right: -2vw;
+    z-index: 1;
+}
+
+/* Card 2 — second from left */
+.motion-card__card--2 {
+    transform: rotate(6deg);
+    margin-right: -2vw;
+    left: -2rem;
+    bottom: -3rem;
+    z-index: 2;
+}
+
+/* Card 3 — third, slightly bigger */
+.motion-card__card--3 {
+    transform: rotate(-6deg);
+    margin-right: -2vw;
+    left: -3rem;
+    z-index: 3;
+}
+
+/* Card 4 — far right, tilted */
+.motion-card__card--4 {
+    transform: rotate(4deg);
+    margin-right: -2vw;
+    z-index: 4;
+    bottom: -2rem;
+    left: -3.5rem;
+}
+
+/* ─── Floating Labels ────────────────────────────────────────────────────── */
+.motion-card__floating-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.motion-card__floating-labels .motion-card__floating-label {
+    pointer-events: auto;
+}
+
+.motion-card__floating-label {
+    position: absolute;
+    padding: 0.1vw 0.5vw;
+    border-radius: 9999px;
+    border-bottom-left-radius: 0;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.motion-card__floating-text {
+    pointer-events: none;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 450;
+    color: var(--color-dark);
+}
+
+/* Card 1 label — pink, center-left area */
+.motion-card__floating-label--pink {
+    background-color: #efbbd8;
+    top: 31%;
+    left: 30%;
+}
+
+/* Card 3 label — orange, bottom area */
+.motion-card__floating-label--orange {
+    background-color: #f4825c;
+    top: 69%;
+    left: 48%;
+}
+
+
+/* Card 4 label — green, top-right area */
+.motion-card__floating-label--red {
+    background-color: #dcec9d;
+    top: 46%;
+    left: 89%;
+}
+
+/* ─── Part 3: Bottom Text ────────────────────────────────────────────────── */
+.motion-card__footer-text {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.motion-card__description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-dark);
+    letter-spacing: -0.2px;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/showreel.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Showreel Section ───────────────────────────────────────────────────── */
+.showreel-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-black-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.showreel__content {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.showreel__title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -3px;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.showreel__subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/cards.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Cards Wrapper ──────────────────────────────────────────────────────── */
+.cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 650px;
+    margin: 100px auto 100px 100px;
+    display: flex;
+    justify-content: center;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+/* ─── Base Card ──────────────────────────────────────────────────────────── */
+.card {
+    width: 320px;
+    height: 460px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 3.5rem 1.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    color: var(--color-white);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform-origin: center center;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.card-title {
+    text-align: left;
+    font-size: 2.2rem;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 800;
+    margin-top: 30px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.card-divider-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* ─── Card Color Variants ────────────────────────────────────────────────── */
+.card-green {
+    background-color: var(--color-green);
+    left: calc(50% - 700px);
+    top: 50px;
+    transform: rotate(4deg);
+    z-index: 1;
+}
+
+.card-darkblue {
+    background-color: var(--color-lightblue);
+    color: var(--color-dark);
+    left: calc(50% - 430px);
+    top: 100px;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.card-orange {
+    background-color: var(--color-orange);
+    color: var(--color-dark);
+    left: calc(50% - 220px);
+    top: 20px;
+    transform: rotate(5deg);
+    z-index: 3;
+}
+
+.card-maroon {
+    background-color: var(--color-maroon);
+    left: calc(50% + 50px);
+    top: 30px;
+    transform: rotate(-8deg);
+    z-index: 4;
+}
+
+.card-pink {
+    background-color: var(--color-pink);
+    color: var(--color-dark);
+    left: calc(50% + 320px);
+    top: 70px;
+    transform: rotate(5deg);
+    z-index: 5;
+}
+
+/* Expand hit area for middle cards to bridge gaps */
+.card-darkblue::after,
+.card-orange::after,
+.card-maroon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -35px;
+    right: -35px;
+}
+
+/* Light card divider overrides */
+.card-pink .card-divider-svg,
+.card-orange .card-divider-svg,
+.card-darkblue .card-divider-svg {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* ─── Card List ──────────────────────────────────────────────────────────── */
+.card-list {
+    list-style: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.card-list li {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+.services-card__bullet-svg {
+    width: 14px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: currentColor;
+}
+
+/* ─── Card Sticker Variables ─────────────────────────────────────────────── */
+:root {
+    --sticker-camera-w: 160px;
+    --sticker-phone-w: 120px;
+    --sticker-smiley-w: 120px;
+    --sticker-hand-w: 120px;
+    --sticker-heart-w: 140px;
+
+    --sticker-camera-top: -45px;
+    --sticker-camera-left: 120px;
+
+    --sticker-phone-top: -45px;
+    --sticker-phone-left: 155px;
+
+    --sticker-smiley-top: -50px;
+
+    --sticker-hand-top: -40px;
+
+    --sticker-heart-top: -50px;
+    --sticker-heart-right: 15px;
+}
+
+/* ─── Card Stickers ──────────────────────────────────────────────────────── */
+.card-sticker {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card-sticker svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card-sticker.sticker-camera {
+    width: var(--sticker-camera-w);
+    height: auto;
+    top: var(--sticker-camera-top);
+    left: var(--sticker-camera-left);
+    transform: rotate(3deg);
+}
+
+.card-sticker.sticker-phone {
+    width: var(--sticker-phone-w);
+    height: auto;
+    top: var(--sticker-phone-top);
+    left: var(--sticker-phone-left);
+    transform: rotate(1deg);
+}
+
+.card-sticker.sticker-smiley {
+    width: var(--sticker-smiley-w);
+    height: auto;
+    top: var(--sticker-smiley-top);
+    left: 70%;
+    transform: translateX(-50%) rotate(4deg);
+}
+
+.card-sticker.sticker-hand {
+    width: var(--sticker-hand-w);
+    height: auto;
+    top: var(--sticker-hand-top);
+    left: 70%;
+    transform: translateX(-50%) rotate(8deg);
+}
+
+.card-sticker.sticker-heart {
+    width: var(--sticker-heart-w);
+    height: auto;
+    top: var(--sticker-heart-top);
+    right: var(--sticker-heart-right);
+    transform: rotate(1deg);
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/marquee.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Double Marquee Section ─────────────────────────────────────────────── */
+.Double-marquee {
+    background-color: var(--bg-color);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    min-height: 100vh;
+}
+
+/* ─── Left Panel ─────────────────────────────────────────────────────────── */
+.marquee-left {
+    flex: 1 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+.marquee-text-container {
+    position: relative;
+    z-index: 5;
+    text-align: left;
+}
+
+.marquee-left h2 {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 4rem;
+    font-weight: 1000;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: var(--color-black);
+    margin-bottom: 120px;
+    margin-right: 50px;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.text-with {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+}
+
+.marquee-underline {
+    position: absolute;
+    top: 7.5rem;
+    right: 7.8rem;
+    width: 100px;
+    height: auto;
+    color: var(--color-black);
+    z-index: 6;
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: left;
+}
+
+/* ─── Blob + Decorative SVGs ─────────────────────────────────────────────── */
+.marquee-blob-container {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 500px;
+    z-index: 1;
+}
+
+.marquee-blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.marquee-svg-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-svg-item {
+    position: absolute;
+}
+
+.marquee-svg-item:nth-child(1) {
+    bottom: 18%;
+    left: 68%;
+    width: 90px;
+    height: auto;
+    transform: translateX(-50%) scale(0) rotate(-20deg);
+    opacity: 0;
+    z-index: 2;
+}
+
+.marquee-svg-item:nth-child(2) {
+    bottom: 3%;
+    left: 70%;
+    width: 350px;
+    height: auto;
+    color: var(--color-dark);
+    transform: rotate(190deg) scaleX(-1);
+    z-index: 1;
+}
+
+.marquee-svg-item:nth-child(2) path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+/* ─── Right Panel — Scrolling Columns ────────────────────────────────────── */
+.marquee-right {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 5px;
+    height: 850px;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    margin-right: 80px;
+}
+
+.marquee-column {
+    flex: 1 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee-column::before,
+.marquee-column::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-column::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg-color) 0%, transparent 100%);
+}
+
+.marquee-column::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--bg-color) 0%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee-column:nth-child(1) .marquee-track {
+    animation: marqueeUp 22s linear infinite;
+}
+
+.marquee-column:nth-child(2) .marquee-track {
+    animation: marqueeDown 22s linear infinite;
+}
+
+@keyframes marqueeUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes marqueeDown {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ─── Marquee Items ──────────────────────────────────────────────────────── */
+.marquee-item {
+    width: 90%;
+    height: 240px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Legacy theme attributes (kept for compatibility) */
+.marquee-item[data-logo-theme="a"] {
+    background-color: #a52a5f;
+}
+
+.marquee-item[data-logo-theme="b"] {
+    background-color: var(--color-darkblue);
+}
+
+.marquee-item[data-logo-theme="c"] {
+    background-color: #ff6b4a;
+}
+
+.marquee-item[data-logo-theme="d"] {
+    background-color: var(--color-green);
+}
+
+.marquee-logo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-logo__before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/footer.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Footer Shell ───────────────────────────────────────────────────────── */
+.main-footer {
+    padding: 10px;
+    background-color: var(--bg-color);
+}
+
+.footer-inner {
+    background-color: var(--color-darkblue);
+    border-radius: 20px;
+    padding: 80px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ─── Top Row ────────────────────────────────────────────────────────────── */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+.footer-column {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--color-white);
+}
+
+.footer-badge {
+    display: inline-block;
+    font-family: "Epilogue", Arial, sans-serif;
+    padding: 8px 15px;
+    background: var(--color-white);
+    color: var(--color-black);
+    align-items: center;
+    border-radius: 20px;
+    border-bottom-left-radius: 1px;
+    font-size: 1rem;
+    font-weight: 450;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-transform: lowercase;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.footer-column h3 {
+    font-family: "Epilogue", Arial, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.footer-column address {
+    font-family: "Epilogue", Arial, sans-serif;
+    font-style: normal;
+    font-size: 2rem;
+    font-weight: 1000;
+    line-height: 1.2;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.footer-map-link {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 4px;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-map-link span {
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.draw-btn__svg {
+    width: 40%;
+    height: auto;
+    margin-top: 2px;
+}
+
+.footer-email {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-white);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-block;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.footer-whatsapp {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: -10px;
+    color: var(--color-white);
+    text-decoration: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-block;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.footer-note {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+/* ─── Social Icons ───────────────────────────────────────────────────────── */
+.footer-socials {
+    display: flex;
+    gap: 25px;
+    margin-top: 1px;
+}
+
+.footer-socials a {
+    color: var(--color-white);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.footer-socials a svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Bottom Area ────────────────────────────────────────────────────────── */
+.footer-bottom {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-big-text {
+    width: 100%;
+    color: var(--color-white);
+    text-align: center;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    margin-bottom: -70px;
+}
+
+.footer-logo__svg {
+    width: 104.9%;
+    height: auto;
+    margin-left: -2.5%;
+}
+
+.footer-logo-text {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4.5rem, 16vw, 14rem);
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+    color: var(--color-white);
+    margin: 0 0 4vw;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-logo-img {
+    display: block;
+    width: min(84vw, 980px);
+    height: auto;
+    margin: 0 auto 4vw;
+}
+
+.footer-bottom-row {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.footer-url {
+    display: none;
+}
+
+/* ─── Credits Pop-out ────────────────────────────────────────────────────── */
+.footer-credits-wrapper {
+    position: relative;
+    pointer-events: auto;
+    margin-right: -25px;
+    margin-bottom: -25px;
+    z-index: 100;
+}
+
+/* Bridge the gap between the credits button and the popup box */
+.footer-credits-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    height: calc(100% + 25px);
+    pointer-events: auto;
+}
+
+.footer-credits {
+    background: var(--color-black);
+    font-family: "Epilogue";
+    color: var(--color-white);
+    padding: 3px 12px;
+    border-radius: 20px;
+    border-bottom-left-radius: 1px;
+    text-decoration: none;
+    font-size: 1rem;
+    pointer-events: auto;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+}
+
+.credits-box {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    right: 0;
+    background: var(--color-black);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: bottom right;
+    border: 3px solid var(--color-white);
+    pointer-events: auto;
+    overflow: hidden;
+    z-index: 1;
+
+    /* Act as a clipping mask anchoring content bottom-right */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.credits-content {
+    display: flex;
+    /* REDUCED BOX SIZE: Makes the box smaller without changing text size */
+    gap: 38px;
+    padding: 34px 26px;
+    white-space: nowrap;
+    width: max-content;
+    height: max-content;
+}
+
+
+.credits-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.overflow-wrapper {
+    overflow: visible;
+}
+
+.credits-label,
+.credits-name {
+    display: inline-block;
+}
+
+.credits-label {
+    color: var(--color-white);
+    font-size: 1.3rem;
+    font-weight: 950;
+    font-family: 'Epilogue', sans-serif;
+}
+
+.credits-name {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    font-weight: 450;
+    font-family: 'Epilogue', sans-serif;
+    opacity: 0.9;
+    text-decoration: none;
+    /* Removed underline since it's an <a> tag now */
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 12 12, pointer;
+    /* Added custom pointer */
+    display: inline-block;
+}
+
+/* ─── Footer Stickers ────────────────────────────────────────────────────── */
+.footer-stickers {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.footer-sticker {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    pointer-events: auto;
+}
+
+.sticker-boom {
+    left: -1%;
+    bottom: 15%;
+    width: 150px;
+    transform: rotate(-10deg);
+}
+
+.sticker-smiley {
+    left: 20%;
+    bottom: 45%;
+    width: 130px;
+    transform: rotate(-20deg);
+}
+
+.sticker-heart {
+    left: 45%;
+    bottom: 30%;
+    width: 130px;
+    transform: rotate(-15deg);
+}
+
+.footer-sticker.sticker-hands {
+    left: 55%;
+    bottom: 0%;
+    width: 130px;
+    transform: rotate(10deg);
+}
+
+.footer-sticker.sticker-100 {
+    left: 60%;
+    bottom: 55%;
+    width: 130px;
+    transform: rotate(-0deg);
+}
+
+.footer-sticker.sticker-camera {
+    right: 8%;
+    bottom: 15%;
+    width: 130px;
+    transform: rotate(5deg);
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/vimeo-hero.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Vimeo Hero ────────────────────────────────────────────────────────────── */
+
+/* The outer wrapper */
+.vimeo-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    overflow: hidden;
+    background:
+        #111 url('/brand/florida.gif') center / cover no-repeat;
+    border-radius: 0;
+    cursor: url("/assets/Cursor SVG/cursor-pointer.svg") 2 0, pointer;
+}
+
+/* ── Iframe fills the container in "cover" mode ── */
+.vimeo-hero__iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw;
+    /* 16:9 */
+    min-height: 100vh;
+    min-width: 177.78vh;
+    /* 16:9 inverted */
+    border: none;
+    pointer-events: none;
+}
+
+/* ── Thumbnail placeholder ── */
+.vimeo-hero__placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.vimeo-hero__placeholder--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Bottom gradient fade so text pops ── */
+.vimeo-hero__fade {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 80% 20%, rgba(255, 154, 232, 0.42), transparent 48%),
+        radial-gradient(ellipse at 12% 88%, rgba(255, 154, 232, 0.34), transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(196, 90, 168, 0.28), transparent 55%),
+        linear-gradient(to bottom,
+            transparent 30%,
+            rgba(0, 0, 0, 0.2) 60%,
+            rgba(0, 0, 0, 0.72) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────
+   ① Headline — bottom-left, matching the screenshot
+───────────────────────────────────────────────── */
+.home-header__title {
+    position: absolute;
+    bottom: 72px;
+    left: 0;
+    right: 0;
+    padding: 0 44px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.vimeo-hero__title {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.9rem, 5.1vw, 5.2rem);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    color: var(--color-white);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0 0.16em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: auto;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 2 0, text;
+}
+
+.vimeo-hero__title * {
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 2 0, text;
+}
+
+/* Each word span */
+.vimeo-hero__word {
+    display: inline-block;
+    position: static;
+}
+
+.vimeo-hero__word.is--relative {
+    position: relative;
+}
+
+/* Italic "advertising" */
+.vimeo-hero__title em {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--color-pink);
+}
+
+/* ─── ⑤ Smiley — NO animation ─────────────────── */
+.home-header__smiley {
+    position: absolute;
+    top: -0.35em;
+    left: 0.4em;
+    width: 1em;
+    height: 1em;
+    pointer-events: none;
+    z-index: 10;
+    rotate: calc(-30deg);
+}
+
+.home-header__smiley-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── ⑤ Pink star — NO spin animation ─────────── */
+.home-header__star {
+    position: absolute;
+    top: 10%;
+    right: -0.6em;
+    transform: translateY(-50%);
+    width: 0.8em;
+    height: 0.8em;
+    pointer-events: none;
+    rotate: calc(10deg);
+}
+
+.home-header__star-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-header__star-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Oval underline under "mainstream" ────────── */
+.home-header__title-line-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 104%;
+    color: var(--color-pink);
+    overflow: visible;
+    pointer-events: none;
+}
+
+.home-header__title-line-path {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw-oval-underline 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s;
+}
+
+@keyframes draw-oval-underline {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ─────────────────────────────────────────────────
+   ④ Hover mute cursor bubble — appears on video hover
+   (same elastic spring as .cursor-bubble)
+───────────────────────────────────────────────── */
+.vimeo-mute-bubble,
+.vimeo-mute-bubble__blob,
+.vimeo-mute-bubble__icon {
+    display: none !important;
+}
+
+/* The blob shape behind the mute icons */
+.vimeo-mute-bubble__blob {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vimeo-mute-bubble__blob-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.vimeo-mute-bubble__icon {
+    position: relative;
+    z-index: 1;
+    width: 56px;
+    height: 56px;
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vimeo-mute-bubble__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* show/hide based on mute state */
+.vimeo-mute-bubble.is--muted .vimeo-mute-bubble__unmute {
+    display: none;
+}
+
+.vimeo-mute-bubble.is--unmuted .vimeo-mute-bubble__mute {
+    display: none;
+}
+
+/* ── Loading spinner ── */
+.vimeo-hero__loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.vimeo-hero__spinner {
+    width: 48px;
+    height: 48px;
+    opacity: 0.7;
+}
+
+/* ─── Remove old blob inside headline (no longer needed) ─── */
+.home-header__touch-play,
+.home-header__blob-svg,
+.home-header__mute-icons {
+    display: none;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/cursor.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Custom Cursor Bubble ───────────────────────────────────────────────── */
+.cursor-bubble {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: var(--color-pink);
+    color: var(--color-black);
+    padding: 5px 7px 3px 7px;
+    border-radius: 50px 50px 50px 0px;
+    font-size: 18px;
+    font-family: 'Epilogue', sans-serif;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left center;
+    z-index: 10000;
+    white-space: nowrap;
+}
+
+/* ─── Page Transition Scribble ───────────────────────────────────────────── */
+.transition-scribble {
+    position: fixed;
+    top: -50vh;
+    left: -50vw;
+    width: 200vw;
+    height: 200vh;
+    z-index: 9999;
+    pointer-events: none;
+    color: var(--color-darkblue);
+}
+
+/* ─── Transition States ──────────────────────────────────────────────────── */
+body.is-transitioning {
+    pointer-events: none !important;
+}
+
+body.is-transitioning .cursor-bubble {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+    display: none !important;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/news.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.news-section {
+    position: relative;
+    padding: 8vw 5vw 12vw;
+    background: var(--bg-color);
+    color: var(--color-dark);
+    overflow: hidden;
+}
+
+.news-heading {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto 4vw;
+    text-align: center;
+    padding: 3rem 5rem 0;
+}
+
+.news-kicker {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #c45aa8;
+    margin-bottom: 0.6rem;
+}
+
+.news-heading h2 {
+    font-size: clamp(2.4rem, 6vw, 5.4rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+}
+
+.news-heading__sticker {
+    position: absolute;
+    width: 88px;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.news-heading__sticker--smiley {
+    top: 0;
+    right: 0;
+    left: auto;
+    rotate: 12deg;
+}
+
+.news-heading__sticker--heart {
+    top: 0.2rem;
+    left: 0;
+    right: auto;
+    width: 96px;
+    rotate: -16deg;
+}
+
+.news-stage {
+    position: relative;
+    width: min(720px, 92vw);
+    margin: 0 auto;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-stage__blob {
+    position: absolute;
+    width: 78%;
+    left: 50%;
+    top: 46%;
+    transform: translate(-58%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.news-stage__sticker {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.news-stage__sticker--hand {
+    width: 86px;
+    right: 2%;
+    bottom: 8%;
+    rotate: 16deg;
+    z-index: 3;
+}
+
+.news-stage__sticker--star {
+    width: 58px;
+    top: 4%;
+    right: 6%;
+    rotate: 20deg;
+    z-index: 3;
+}
+
+.news-polaroid {
+    position: relative;
+    z-index: 2;
+    width: min(420px, 78vw);
+    background: #fffaf6;
+    border-radius: 18px;
+    padding: 0.85rem 0.85rem 1.2rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 18px 50px rgba(40, 10, 30, 0.18);
+    transform: rotate(-4deg);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.news-polaroid__icon {
+    position: absolute;
+    top: -22px;
+    left: -18px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 6;
+}
+
+.news-polaroid__icon img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.news-polaroid__photo {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 280px;
+}
+
+.news-polaroid__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-polaroid:hover .news-polaroid__photo img {
+    transform: scale(1.08);
+}
+
+.news-polaroid__copy {
+    padding: 1rem 0.4rem 0.2rem;
+    text-align: center;
+}
+
+.news-polaroid__chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.news-polaroid__copy h3 {
+    font-size: 1.25rem;
+    margin: 0.55rem auto 0.4rem;
+    line-height: 1.15;
+}
+
+.news-polaroid__copy p {
+    font-size: 0.9rem;
+    opacity: 0.72;
+    line-height: 1.45;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-tag {
+    display: inline-block;
+    background: #e86ec4;
+    color: #fff;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+}
+
+.news-version {
+    display: inline-flex;
+    align-items: center;
+    background: var(--color-pink);
+    color: #1a1a1a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.32rem 0.65rem;
+    border-radius: 999px;
+}
+
+.news-more {
+    display: inline-block;
+    margin-top: 0.9rem;
+    background: var(--color-pink);
+    color: #1a1a1a;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+}
+
+.news-chip {
+    position: absolute;
+    z-index: 5;
+    left: auto;
+    right: 4%;
+    top: 10%;
+    bottom: auto;
+    background: var(--color-pink);
+    color: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px 999px 0 999px;
+    rotate: 8deg;
+    pointer-events: none;
+}
+
+.news-open {
+    background: var(--bg-color);
+    color: var(--color-dark);
+    min-height: 100vh;
+}
+
+.news-open__main {
+    position: relative;
+    padding: 8.5rem 5vw 6rem;
+    overflow: visible;
+}
+
+.news-open__blob {
+    position: absolute;
+    width: min(760px, 78vw);
+    left: 50%;
+    top: 18%;
+    transform: translate(-56%, 0);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.news-open__sticker {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.news-open__sticker--heart {
+    width: 96px;
+    top: 7.2rem;
+    bottom: auto;
+    left: max(12px, calc(50% - 530px));
+    rotate: -16deg;
+}
+
+.news-open__sticker--hand {
+    width: 88px;
+    right: max(12px, calc(50% - 530px));
+    top: auto;
+    bottom: 12%;
+    rotate: 14deg;
+}
+
+.news-open__sticker--smiley {
+    width: 80px;
+    left: max(20px, calc(50% - 500px));
+    top: auto;
+    bottom: 14%;
+    rotate: 10deg;
+}
+
+.news-open__sticker--star {
+    width: 56px;
+    right: max(20px, calc(50% - 500px));
+    top: 8.4rem;
+    rotate: 22deg;
+}
+
+.news-sheet {
+    position: relative;
+    z-index: 2;
+    width: min(820px, 92vw);
+    margin: 0 auto;
+    background: #fffaf6;
+    border-radius: 22px;
+    padding: 1rem 1rem 2.4rem;
+    box-shadow: 0 22px 60px rgba(40, 10, 30, 0.16);
+    transform: rotate(-1.2deg);
+}
+
+.news-sheet__icon {
+    position: absolute;
+    top: -22px;
+    left: -16px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 6;
+}
+
+.news-sheet__icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.news-sheet__photo {
+    border-radius: 16px;
+    overflow: hidden;
+    height: min(46vw, 420px);
+    min-height: 240px;
+}
+
+.news-sheet__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+}
+
+.news-sheet__copy {
+    padding: 1.5rem 1.6rem 0.4rem;
+    text-align: center;
+}
+
+.news-sheet__chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.news-sheet__date {
+    margin: 0.85rem 0 0.35rem;
+    color: #c45aa8;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+}
+
+.news-sheet__copy h1 {
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-sheet__lead {
+    margin: 0.9rem auto 1.6rem;
+    max-width: 42ch;
+    opacity: 0.72;
+    line-height: 1.55;
+    font-size: 1.05rem;
+}
+
+.news-sheet__body {
+    text-align: center;
+}
+
+.news-sheet__body h2 {
+    margin: 1.8rem auto 0.7rem;
+    font-size: 1.35rem;
+}
+
+.news-sheet__kicker {
+    font-style: italic;
+    letter-spacing: 0.14em;
+    color: #c45aa8;
+    font-size: 0.78rem;
+    margin: 0 auto 0.4rem;
+}
+
+.news-sheet__body p,
+.news-sheet__body li {
+    line-height: 1.7;
+    opacity: 0.82;
+}
+
+.news-sheet__body p {
+    margin: 0 auto 0.9rem;
+    max-width: 46ch;
+}
+
+.news-sheet__body ul {
+    list-style: none;
+    margin: 0 auto 1.1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-sheet__body li {
+    position: relative;
+    margin: 0.55rem 0;
+    padding-left: 1.15rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 42ch;
+    text-align: left;
+}
+
+.news-sheet__body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-pink);
+}
+
+.news-sheet__shot {
+    margin: 1.4rem auto 1.8rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f3e4ee;
+}
+
+.news-sheet__shot img {
+    width: 100%;
+    display: block;
+    max-height: 360px;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.news-sheet__shot figcaption {
+    padding: 0.75rem 1rem 0.9rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    opacity: 0.65;
+    text-align: center;
+}
+
+.news-sheet__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.65rem;
+    gap: 0.65rem;
+    margin: 1.6rem auto 2rem;
+}
+
+.news-sheet__gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    object-position: center 18%;
+    border-radius: 14px;
+}
+
+.news-sheet__back {
+    display: inline-block;
+    background: var(--color-pink);
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+}
+
+@media (max-width: 1100px) {
+    .news-open__sticker {
+        display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .news-heading__sticker,
+    .news-stage__sticker--hand {
+        width: 70px;
+    }
+
+    .news-heading__sticker--heart {
+        left: 0;
+        top: 0.4rem;
+        width: 72px;
+    }
+
+    .news-stage {
+        min-height: 540px;
+    }
+
+    .news-polaroid {
+        transform: none;
+    }
+
+    .news-open__main {
+        padding: 7.2rem 4vw 4rem;
+    }
+
+    .news-open__sticker {
+        display: none;
+    }
+
+    .news-open__sticker--heart,
+    .news-open__sticker--hand,
+    .news-open__sticker--smiley {
+        width: 64px;
+    }
+
+    .news-sheet {
+        transform: none;
+        padding: 0.75rem 0.75rem 1.8rem;
+    }
+
+    .news-sheet__copy {
+        padding: 1.1rem 0.55rem 0.2rem;
+    }
+
+    .news-sheet__gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .news-sheet__gallery img {
+        height: 180px;
+    }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/styles/responsive.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+/* ─── Tablet (769px – 1200px) ────────────────────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .cards-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        gap: 30px;
+        overflow: visible;
+    }
+
+    .card {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        min-height: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ─── Medium screens (≤ 900px) ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .footer-column h3,
+    .footer-column address,
+    .footer-email {
+        font-size: 1.5rem;
+    }
+
+    .footer-big-text {
+        font-size: 40vw;
+    }
+}
+
+/* ─── Mobile (≤ 768px) ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ── Navbar ─────────────────────── */
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .logo-truus {
+        width: auto;
+    }
+
+    .logo-truus__img--full {
+        height: 72px;
+    }
+
+    .logo-truus__img--mark {
+        height: 64px;
+    }
+
+    .logo-work-container {
+        width: 48px;
+        height: 44px;
+    }
+
+    .logo-work-text {
+        font-size: 1.4rem;
+        margin-left: 52px;
+    }
+
+    .nav-bar__discord-svg {
+        width: 26px;
+    }
+
+    /* ── Header Hero ────────────────── */
+    .header-content {
+        height: 100svh;
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    /* ── Content / Hero Title ───────── */
+    .content-section {
+        padding: 80px 0 0;
+        overflow: visible;
+    }
+
+    .main-title {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+
+    .title-underline-svg {
+        width: 100px;
+        bottom: -10px;
+    }
+
+    .title-container {
+        margin-bottom: 50px;
+    }
+
+    /* ── Cards (GSAP-controlled) ─────── */
+    .cards-wrapper {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        overflow: visible !important;
+    }
+
+    .card {
+        width: 82vw;
+        max-width: 340px;
+        min-height: 420px;
+        height: auto;
+    }
+
+    .card-sticker {
+        pointer-events: none;
+    }
+
+    /* ── Double Marquee ─────────────── */
+    .Double-marquee {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 24px 0;
+        gap: 0;
+        min-height: unset;
+    }
+
+    .marquee-left {
+        max-width: 100%;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 340px;
+    }
+
+    .marquee-text-container {
+        text-align: left;
+    }
+
+    .marquee-left h2 {
+        font-size: 2.6rem;
+        letter-spacing: -1.5px;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .marquee-blob-container {
+        width: 240px;
+        height: 280px;
+        top: 45%;
+        left: 20%;
+    }
+
+    .marquee-svg-item:nth-child(1) {
+        width: 60px;
+        bottom: 10%;
+        left: 55%;
+    }
+
+    .marquee-svg-item:nth-child(2) {
+        width: 220px;
+        bottom: -5%;
+        left: 55%;
+    }
+
+    .marquee-underline {
+        top: 5rem;
+        right: auto;
+        left: 9.5rem;
+        width: 70px;
+    }
+
+    /* ── Logo columns → 2-row horizontal scroll grid ── */
+    .marquee-right {
+        display: grid;
+        grid-template-rows: 130px 130px;
+        grid-auto-flow: column;
+        grid-auto-columns: 130px;
+        grid-gap: 8px;
+        gap: 8px;
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        padding: 20px 24px 32px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .marquee-right::-webkit-scrollbar {
+        display: none;
+    }
+
+    .marquee-column {
+        display: contents;
+    }
+
+    .marquee-column::before,
+    .marquee-column::after {
+        display: none;
+    }
+
+    .marquee-column:nth-child(1) .marquee-track,
+    .marquee-column:nth-child(2) .marquee-track {
+        display: contents;
+        animation: none;
+    }
+
+    .marquee-item {
+        width: 130px;
+        height: 130px;
+        flex-shrink: 0;
+    }
+
+    /* ── Footer ─────────────────────── */
+    .main-footer {
+        padding: 6px;
+    }
+
+    .footer-inner {
+        padding: 50px 20px 30px;
+        border-radius: 14px;
+        min-height: 100svh;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.4rem;
+        letter-spacing: -0.5px;
+    }
+
+    .footer-column address {
+        font-size: 1.25rem;
+    }
+
+    .footer-email {
+        font-size: 1.3rem;
+    }
+
+    .footer-whatsapp {
+        font-size: 1.1rem;
+        margin-top: -6px;
+    }
+
+    .footer-map-link {
+        font-size: 0.95rem;
+    }
+
+    /* ── Footer Stickers (mobile) ──── */
+    .sticker-boom {
+        left: 2%;
+        bottom: 10%;
+        width: 90px;
+    }
+
+    .sticker-smiley {
+        left: 30%;
+        bottom: 5%;
+        width: 90px;
+    }
+
+    .sticker-heart {
+        left: 50%;
+        bottom: 18%;
+        width: 85px;
+    }
+
+    .footer-sticker.sticker-hands {
+        left: 60%;
+        bottom: 2%;
+        width: 90px;
+    }
+
+    .footer-sticker.sticker-100 {
+        left: 72%;
+        bottom: 20%;
+        width: 80px;
+    }
+
+    .footer-sticker.sticker-camera {
+        right: 2%;
+        bottom: 8%;
+        width: 85px;
+    }
+
+    /* ── Footer wordmark ────────────── */
+    .footer-bottom {
+        margin-top: 200px;
+    }
+
+    .footer-logo__svg {
+        width: 110%;
+        margin-left: -5%;
+    }
+
+    /* ── Credits badge ──────────────── */
+    .footer-credits-wrapper {
+        margin-right: -15px;
+        margin-bottom: -15px;
+    }
+
+    .footer-credits {
+        font-size: 0.75rem;
+    }
+
+    .credits-box {
+        padding: 16px 20px;
+        gap: 20px;
+    }
+
+    .credits-label {
+        font-size: 0.85rem;
+    }
+
+    .credits-name {
+        font-size: 0.95rem;
+    }
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+
+
